@@ -1,7 +1,8 @@
-Ts=0.001
-
-init_position=[0,0,0.8]
-desired_q=[0,0,0,0.6,0,0,0,0.6,0,0,0,0.6,0,0,0,0.6]
+Ts=0.001;
+p_show=[0.3;-0.2;0];
+init_position=[0,0,0.65];
+desired_q=[0,0,0,0.6,0,0,0,0.6,0,0,0,0.6,0,0,0,0.6];
+desired_leg=-[0,0,0,0.5,0,0,0,1,0,0,0,-0.5,0,0,0,-1];
 % Contact model parameters
 % Normal force
 c_k = 5e3;
@@ -22,3 +23,7 @@ for i=1:4
     eval(['yaw',num2str(i),'=yaw(',num2str(i),');']);
     eval(['l',num2str(i),'=l(',num2str(i),');']);
 end
+
+init_position=[0,0,0.8];
+
+        
