@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_sporter -->
+<robot
+  name="husky">
+  <link
+    name="Body">
+    <inertial>
+      <origin
+        xyz="0.0211071592923378 0 -0.0415232736197185"
+        rpy="0 0 0" />
+      <mass
+        value="0.82234829634822" />
+      <inertia
+        ixx="0.000459915991926448"
+        ixy="8.15944830666836E-13"
+        ixz="1.96417515898066E-05"
+        iyy="0.000544483864173317"
+        iyz="3.07545900066903E-08"
+        izz="0.000323732011489045" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/Body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/Body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hip_rl">
+    <inertial>
+      <origin
+        xyz="-0.004454141 0.02824932 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359443182305763" />
+      <inertia
+        ixx="2.70762134663166E-05"
+        ixy="2.3931924096827E-06"
+        ixz="5.09943156182198E-09"
+        iyy="9.43684872810118E-06"
+        iyz="-7.37841303905059E-08"
+        izz="2.44222433424521E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_rl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_rl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_rl_f"
+    type="revolute">
+    <origin
+      xyz="-0.19745 0.045 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="hip_rl" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="femur_rl">
+    <inertial>
+      <origin
+        xyz="0 0.0361117637 -0.08282914"
+        rpy="0 0 0" />
+      <mass
+        value="0.152097608878586" />
+      <inertia
+        ixx="4.39271248910885E-05"
+        ixy="6.91552814530331E-10"
+        ixz="-1.83185228614627E-08"
+        iyy="6.21094780413375E-05"
+        iyz="4.58760753059716E-10"
+        izz="2.75629448518317E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_rl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_rl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_rl_s"
+    type="revolute">
+    <origin
+      xyz="-0.007 0.053 0"
+      rpy="0 0 0" />
+    <parent
+      link="hip_rl" />
+    <child
+      link="femur_rl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tibia_rl">
+    <inertial>
+      <origin
+        xyz="-0.1057537 0.003983084 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386281065299358" />
+      <inertia
+        ixx="7.12522465859726E-06"
+        ixy="1.09307273712402E-06"
+        ixz="-8.00478110520346E-10"
+        iyy="3.48397210023154E-05"
+        iyz="-1.63865062956288E-09"
+        izz="2.98656007512978E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_rl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_rl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_rl"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.158"
+      rpy="0 0 0" />
+    <parent
+      link="femur_rl" />
+    <child
+      link="tibia_rl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tarsus_rl">
+    <inertial>
+      <origin
+        xyz="0 0 -0.054555"
+        rpy="0 0 0" />
+      <mass
+        value="0.182843362911726" />
+      <inertia
+        ixx="0.000120755566797708"
+        ixy="-8.51394103095551E-12"
+        ixz="-6.94776948529209E-13"
+        iyy="0.000116988513204247"
+        iyz="3.77436628974131E-12"
+        izz="2.51325482776806E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_rl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_rl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_rl"
+    type="revolute">
+    <origin
+      xyz="-0.333 0.0075 0"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_rl" />
+    <child
+      link="tarsus_rl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_rl">
+    <inertial>
+      <origin
+        xyz="0.15598 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.022231885605909" />
+      <inertia
+        ixx="9.87556052587583E-07"
+        ixy="3.81108638889871E-08"
+        ixz="-1.25113408522424E-13"
+        iyy="2.53724963631523E-05"
+        iyz="-2.76558475727964E-14"
+        izz="2.49180597934993E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_rl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_rl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_rl"
+    type="continuous">
+    <origin
+      xyz="0 0 0.06"
+      rpy="0 0 0" />
+    <parent
+      link="tarsus_rl" />
+    <child
+      link="link_rl" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="hip_rr">
+    <inertial>
+      <origin
+        xyz="-0.004454141 -0.02824932 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359443183140278" />
+      <inertia
+        ixx="2.70762137070002E-05"
+        ixy="-2.39319246374955E-06"
+        ixz="-5.09946868769336E-09"
+        iyy="9.43684882222105E-06"
+        iyz="-7.37842997255125E-08"
+        izz="2.4422243349908E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_rr_f"
+    type="revolute">
+    <origin
+      xyz="-0.19745 -0.045 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="hip_rr" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="femur_rr">
+    <inertial>
+      <origin
+        xyz="0 -0.0361117637 -0.08282914"
+        rpy="0 0 0" />
+      <mass
+        value="0.152097608703823" />
+      <inertia
+        ixx="4.39271248513547E-05"
+        ixy="6.91543149797179E-10"
+        ixz="1.83187127044182E-08"
+        iyy="6.21094779218342E-05"
+        iyz="-4.58777022902181E-10"
+        izz="2.75629447730204E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_rr_s"
+    type="revolute">
+    <origin
+      xyz="-0.007 -0.053 0"
+      rpy="0 0 0" />
+    <parent
+      link="hip_rr" />
+    <child
+      link="femur_rr" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tibia_rr">
+    <inertial>
+      <origin
+        xyz="-0.1057537 -0.003983084 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386281062345205" />
+      <inertia
+        ixx="7.1252246351902E-06"
+        ixy="-1.09307271506804E-06"
+        ixz="8.00472745726573E-10"
+        iyy="3.48397208700752E-05"
+        iyz="-1.63864675282453E-09"
+        izz="2.98656006318311E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_rr"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.158"
+      rpy="0 0 0" />
+    <parent
+      link="femur_rr" />
+    <child
+      link="tibia_rr" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tarsus_rr">
+    <inertial>
+      <origin
+        xyz="0 0 -0.054555"
+        rpy="0 0 0" />
+      <mass
+        value="0.182843362911726" />
+      <inertia
+        ixx="0.000120755566797708"
+        ixy="-8.51394103298896E-12"
+        ixz="6.94777500870091E-13"
+        iyy="0.000116988513204247"
+        iyz="-3.77436541860114E-12"
+        izz="2.51325482776806E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_rr"
+    type="revolute">
+    <origin
+      xyz="-0.333 -0.0075 0"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_rr" />
+    <child
+      link="tarsus_rr" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_rr">
+    <inertial>
+      <origin
+        xyz="0.15598 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0222318856387224" />
+      <inertia
+        ixx="9.87556053074512E-07"
+        ixy="-3.81108638891084E-08"
+        ixz="1.25321029989709E-13"
+        iyy="2.53724963632346E-05"
+        iyz="-2.74003733997187E-14"
+        izz="2.4918059793518E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_rr"
+    type="continuous">
+    <origin
+      xyz="0 0 0.06"
+      rpy="0 0 0" />
+    <parent
+      link="tarsus_rr" />
+    <child
+      link="link_rr" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="hip_fl">
+    <inertial>
+      <origin
+        xyz="-0.004454141 0.02824932 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359443185115185" />
+      <inertia
+        ixx="2.70762138492206E-05"
+        ixy="2.39319249507143E-06"
+        ixz="5.09944659882223E-09"
+        iyy="9.43684894485697E-06"
+        iyz="-7.37842386043371E-08"
+        izz="2.44222434072564E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_fl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_fl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_fl_f"
+    type="revolute">
+    <origin
+      xyz="0.19745 0.045 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="hip_fl" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="femur_fl">
+    <inertial>
+      <origin
+        xyz="0 0.0361117637 -0.08282914"
+        rpy="0 0 0" />
+      <mass
+        value="0.152097609273322" />
+      <inertia
+        ixx="4.39271251028734E-05"
+        ixy="6.91540064901458E-10"
+        ixz="-1.83184904386034E-08"
+        iyy="6.21094782699363E-05"
+        iyz="4.58746027892432E-10"
+        izz="2.75629448679641E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_fl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_fl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_fl_s"
+    type="revolute">
+    <origin
+      xyz="-0.007 0.053 0"
+      rpy="0 0 0" />
+    <parent
+      link="hip_fl" />
+    <child
+      link="femur_fl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tibia_fl">
+    <inertial>
+      <origin
+        xyz="-0.1057537 0.003983084 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386281076645603" />
+      <inertia
+        ixx="7.12522522586293E-06"
+        ixy="1.0930728048501E-06"
+        ixz="-8.00870067195263E-10"
+        iyy="3.4839722028018E-05"
+        iyz="-1.6386268554641E-09"
+        izz="2.98656012518756E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_fl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_fl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_fl"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.158"
+      rpy="0 0 0" />
+    <parent
+      link="femur_fl" />
+    <child
+      link="tibia_fl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tarsus_fl">
+    <inertial>
+      <origin
+        xyz="0 0 -0.054555"
+        rpy="0 0 0" />
+      <mass
+        value="0.182843362911726" />
+      <inertia
+        ixx="0.000120755566797708"
+        ixy="-8.51394104017069E-12"
+        ixz="6.94777373490634E-13"
+        iyy="0.000116988513204247"
+        iyz="-3.77436543268781E-12"
+        izz="2.51325482776806E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_fl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_fl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_fl"
+    type="revolute">
+    <origin
+      xyz="-0.333 0.0075 0"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_fl" />
+    <child
+      link="tarsus_fl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_fl">
+    <inertial>
+      <origin
+        xyz="0.15598 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0222318856059" />
+      <inertia
+        ixx="9.87556052587465E-07"
+        ixy="3.81108638889694E-08"
+        ixz="-1.25321108906669E-13"
+        iyy="2.53724963631525E-05"
+        iyz="-2.76554512146632E-14"
+        izz="2.49180597934994E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_fl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_fl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_fl"
+    type="continuous">
+    <origin
+      xyz="0 0 0.06"
+      rpy="0 0 0" />
+    <parent
+      link="tarsus_fl" />
+    <child
+      link="link_fl" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="hip_fr">
+    <inertial>
+      <origin
+        xyz="-0.004454141 -0.02824932 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359443185115185" />
+      <inertia
+        ixx="2.63878354499132E-05"
+        ixy="-2.33234864755538E-06"
+        ixz="-4.96980651907523E-09"
+        iyy="9.19692903297758E-06"
+        iyz="-7.19084532938084E-08"
+        izz="2.380133902073E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_fr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/hip_fr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_fr_f"
+    type="revolute">
+    <origin
+      xyz="0.19745 -0.045 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="hip_fr" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="femur_fr">
+    <inertial>
+      <origin
+        xyz="0 -0.0361117637 -0.08282914"
+        rpy="0 0 0" />
+      <mass
+        value="0.152097609273322" />
+      <inertia
+        ixx="0.000118603237038913"
+        ixy="1.86717159202298E-09"
+        ixz="4.94602319659715E-08"
+        iyy="0.000167695590354466"
+        iyz="-1.23869461907944E-09"
+        izz="7.44199509171748E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_fr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/femur_fr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_fr_s"
+    type="revolute">
+    <origin
+      xyz="-0.007 -0.053 0"
+      rpy="0 0 0" />
+    <parent
+      link="hip_fr" />
+    <child
+      link="femur_fr" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tibia_fr">
+    <inertial>
+      <origin
+        xyz="-0.1057537 -0.003983084 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386281075081418" />
+      <inertia
+        ixx="7.12522516584858E-06"
+        ixy="-1.09307276882746E-06"
+        ixz="8.00928595508665E-10"
+        iyy="3.48397219114748E-05"
+        iyz="-1.63860403815178E-09"
+        izz="2.98656011686537E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_fr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tibia_fr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_fr"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.158"
+      rpy="0 0 0" />
+    <parent
+      link="femur_fr" />
+    <child
+      link="tibia_fr" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="tarsus_fr">
+    <inertial>
+      <origin
+        xyz="0 0 -0.054555"
+        rpy="0 0 0" />
+      <mass
+        value="0.182843362911727" />
+      <inertia
+        ixx="0.000120755566797709"
+        ixy="-8.51394103341617E-12"
+        ixz="-6.94776949111306E-13"
+        iyy="0.000116988513204248"
+        iyz="3.7743664336136E-12"
+        izz="2.51325482776806E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_fr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/tarsus_fr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_fr"
+    type="revolute">
+    <origin
+      xyz="-0.333 -0.0075 0"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_fr" />
+    <child
+      link="tarsus_fr" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <link
+    name="link_fr">
+    <inertial>
+      <origin
+        xyz="0.15598 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0222318856551154" />
+      <inertia
+        ixx="9.8755605329094E-07"
+        ixy="-3.81108639404438E-08"
+        ixz="1.25007421030643E-13"
+        iyy="2.5372496363353E-05"
+        iyz="-2.75128843832001E-14"
+        izz="2.49180597935776E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_fr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky/meshes/link_fr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_fr"
+    type="continuous">
+    <origin
+      xyz="0 0 0.06"
+      rpy="0 0 0" />
+    <parent
+      link="tarsus_fr" />
+    <child
+      link="link_fr" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
